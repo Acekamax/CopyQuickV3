@@ -33,4 +33,5 @@
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="java:app/copyquickmysql" object-type="user" pool-name="mysql_copyquick_rootPool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/BD" object-type="user" pool-name="mysql_copyquick_rootPool"/>
 </resources>
