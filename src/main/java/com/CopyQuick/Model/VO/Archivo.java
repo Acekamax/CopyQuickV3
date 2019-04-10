@@ -52,6 +52,8 @@ public class Archivo implements Serializable {
     private String escuela;
     @Column(name = "publico")
     private Boolean publico;
+    @Column(name = "numHojas")
+    private Integer numHojas;
     @JoinColumn(name = "nomUsuario", referencedColumnName = "nomUsuario")
     @ManyToOne
     private Usuario nomUsuario;
@@ -101,6 +103,14 @@ public class Archivo implements Serializable {
 
     public void setPublico(Boolean publico) {
         this.publico = publico;
+    }
+
+    public Integer getNumHojas() {
+        return numHojas;
+    }
+
+    public void setNumHojas(Integer numHojas) {
+        this.numHojas = numHojas;
     }
 
     public Usuario getNomUsuario() {

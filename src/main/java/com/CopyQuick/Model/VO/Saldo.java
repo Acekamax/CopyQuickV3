@@ -38,8 +38,8 @@ public class Saldo implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_saldo")
     private Integer idSaldo;
-    @Column(name = "saldo")
-    private Integer saldo;
+    @Column(name = "cantidad")
+    private Integer cantidad;
     @JoinColumn(name = "id_administrador", referencedColumnName = "id_administrador")
     @ManyToOne
     private Administrador idAdministrador;
@@ -63,11 +63,11 @@ public class Saldo implements Serializable {
     }
 
     public Integer getSaldo() {
-        return saldo;
+        return cantidad;
     }
 
     public void setSaldo(Integer saldo) {
-        this.saldo = saldo;
+        this.cantidad = saldo;
     }
 
     public Administrador getIdAdministrador() {

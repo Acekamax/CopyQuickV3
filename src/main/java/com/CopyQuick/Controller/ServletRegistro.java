@@ -87,8 +87,6 @@ public class ServletRegistro extends HttpServlet {
             est.setCarrera(datos[3][1]);
             est.setSemestre(Integer.parseInt(datos[4][1]));
             est.setIdEstudiante(14586);
-            est.setCorreo(datos[2][1]);
-            est.setSaldo(0);
             um.insertUser(user);
             em.insertEstudent(est);
         }else{
@@ -96,9 +94,7 @@ public class ServletRegistro extends HttpServlet {
             Profesor prof = new Profesor();
             user.setNomUsuario(datos[0][1]);
             user.setContrasena(datos[1][1]);
-            prof.setCorreo(datos[2][1]);
             prof.setIdProfesor(8798545);
-            prof.setTipo(datos[3][1]);
             um.insertUser(user);
             pm.insertEstudent(prof);
         }
