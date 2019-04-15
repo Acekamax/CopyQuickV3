@@ -125,11 +125,10 @@ function archivoEscogido(idFile) {
 //----------Ver archivos----------------------------------------------------------------------------------------
 function mostrarArchivos() {
     $.ajax({
-        url: "http://localhost:8080/copyquickmaven/ServletArchivos",
+        url: "http://localhost:8080/CopyQuick/ServletArchivos",
         type: "GET",
-        data: {"id_archivo": "1"},
         success: function (rta) {
-
+            console.log(rta);
         }
     });
 }

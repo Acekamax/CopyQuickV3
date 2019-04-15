@@ -7,8 +7,12 @@ package com.CopyQuick.Controller;
 
 import com.CopyQuick.Model.VO.Archivo;
 import com.CopyQuick.Model.VO.ArchivoManager;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -47,12 +51,13 @@ public class ServletArchivos extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ArchivoManager am = new ArchivoManager();
-        String[] json = Utils.readParams(request).split(":");
-        Archivo ac = new Archivo();
-        json[1] = json[1].substring(1, json[1].length()-1);
-        ac.setIdArchivo(Integer.parseInt(json[1]));
-        String file = am.findFile(ac);
-        response.sendRedirect("MostrarArchivos.jsp?"+file);
+        List<Archivo> list = am.findFiles();
+        
+        for(int i=0;i<list.size();i++){
+            Archivo a = (Archivo) list.get(i);
+            System.out.println(a.getIdArchivo()+" "+a.getNombre()+" "+a.getNomUsuario().getNomUsuario()+" "+a.getSemestre());
+        }
+        
     }
 
     /**

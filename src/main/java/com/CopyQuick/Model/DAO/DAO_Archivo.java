@@ -7,8 +7,9 @@ package com.CopyQuick.Model.DAO;
 
 import com.CopyQuick.Model.VO.Archivo;
 import com.CopyQuick.Persistence.EMF;
-import java.util.List;
+import java.util.ArrayList;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -18,11 +19,11 @@ public class DAO_Archivo {
     
     public EntityManager em = null;
     
-    public Archivo findFiles(Archivo archivo){
+    public ArrayList<Archivo> findFiles(){
         em = EMF.get().createEntityManager();
         em.getTransaction().begin();
-        Archivo file = em.find(Archivo.class, 1);
-        return file;
+        Query query = em.createQuery("SELECT a FROM Archivo a");
+        return (ArrayList<Archivo>) query.getResultList();
     }
     
 }

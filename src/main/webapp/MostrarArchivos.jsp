@@ -10,8 +10,8 @@
 
     <head>
         <title>CopyQuick</title>
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/ajax.js"></script>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="ajax.js"></script>
     </head>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Comfortaa');
@@ -68,7 +68,7 @@
             text-align: center;
         }
 
-        input {
+        button {
             border: none;
             background: none;
             width: 30mm;
@@ -94,6 +94,18 @@
                             <th>Nombre Archivo</th>
                             <th>Profesor</th>
                             <th>Semestre</th>
+                        </tr>
+                        <tr>
+                            <td><button onclick="window.location.href = 'ArchivoEscogido.jsp';">1</button></td>
+                            <td>Manifiesto Agil</td>
+                            <td>Andrea Muñoz</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="window.location.href = 'ArchivoEscogido.jsp';">2</button></td>
+                            <td>Metodología agíl SCRUM</td>
+                            <td>Jairo Niño</td>
+                            <td>8</td>
                         </tr>
                     </table>
                     <br>

@@ -7,6 +7,7 @@ package com.CopyQuick.Model.VO;
 
 import com.CopyQuick.Model.DAO.DAO_Archivo;
 import com.CopyQuick.Controller.Utils;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,9 +15,9 @@ import com.CopyQuick.Controller.Utils;
  */
 public class ArchivoManager {
     
-    public String findFile(Archivo archivo){
+    public ArrayList<Archivo> findFiles(){
         DAO_Archivo dao = new DAO_Archivo();
-        return Utils.toJson(dao.findFiles(archivo));
+        return dao.findFiles();
     }
     
 }
